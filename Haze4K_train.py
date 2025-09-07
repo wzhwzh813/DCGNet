@@ -63,9 +63,8 @@ batch_size = 4
 learning_rate = 1e-4
 num_epochs = 150  
 continue_train = True
-start_epoch = 130
-# loss_file_path = 'model/haze4k_loss.txt'
-loss_file_path = 'model/DCGNet_loss.txt'
+start_epoch = 0
+loss_file_path = 'DCGNet_loss.txt'
 
 # 数据预处理
 transform = transforms.Compose([
@@ -156,5 +155,6 @@ for epoch in range(start_epoch, num_epochs):
         print(f'Train loss did not improve. Best Train Loss remains: {best_train_loss:.4f}')
 
     scheduler.step(avg_train_loss)
+
 
 
