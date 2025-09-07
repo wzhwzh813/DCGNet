@@ -113,9 +113,7 @@ criterion = AdaptiveMixLoss(window_size=11, size_average=True).to(device)
 optimizer = optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=1e-4)
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.5, patience=5, verbose=True)
 
-# best_model_path = 'model/haze4k_best_model.pth'
-# best_model_path='model/ablation/original_CBAM/original_CBAM_best_model.pth'
-best_model_path='model/1_DCGNet_best_model.pth'
+best_model_path='DCGNet_best_model.pth'
 
 # 加载之前保存的模型参数（如果需要）
 if continue_train and os.path.exists(best_model_path):
@@ -258,3 +256,4 @@ plt.tight_layout()
 plt.savefig('model/1_haze4k_test.png')
 # plt.savefig('model/haze4k_no_residual_connnection_test.png')
 plt.close()
+
