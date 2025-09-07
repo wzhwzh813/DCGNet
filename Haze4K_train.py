@@ -112,7 +112,7 @@ scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.5, p
 # 训练状态变量
 best_train_loss = float('inf')
 # best_model_path = 'model/haze4k_best_model.pth'
-best_model_path = 'model/1_DCGNet_best_model.pth'
+best_model_path = 'model/DCGNet_best_model.pth'
 
 # 加载模型
 if continue_train and os.path.exists(best_model_path):
@@ -155,6 +155,7 @@ for epoch in range(start_epoch, num_epochs):
         print(f'Train loss did not improve. Best Train Loss remains: {best_train_loss:.4f}')
 
     scheduler.step(avg_train_loss)
+
 
 
 
